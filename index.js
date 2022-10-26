@@ -4,8 +4,11 @@ const path = require("path");
 
 const app = express();
 
+// Middleware used to serve static files like css , images etc..
 app.use('/dist',express.static('dist'));
+// parser to parse data from HTML forms
 app.use(bodyParser.urlencoded( {extended: true} ));
+
 
 app.get("/" , (req , res)=>{
     res.sendFile(path.join(__dirname , "src" ,"index.html"));
@@ -33,5 +36,5 @@ app.listen(port , () => {
     console.log(`Server is running on port: ${port}` );
 })
 
-// API Key
-// ef5fa4b72a41c354d1706ffda2ba9129-us21
+// TO DO
+// Recreate a mailchimp account , get another api key , follow along the tutorial , manage audiences create success and failure pages
